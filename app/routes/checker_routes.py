@@ -20,9 +20,9 @@ def check_answer():
         return "Grid size error", 400
 
     try:  
-        return calculate_cross_sums(data["row_targets"], data["col_targets"], data["row_weights"], data["col_weights"])
+        return {"success": True, "answer": calculate_cross_sums(data["row_targets"], data["col_targets"], data["row_weights"], data["col_weights"])}
     except Exception:
-        return "No answer or faulty values"
+        return {"success": False, "errorMessage": "No answer or faulty values"}
 
 def correct_grid_size(grid_size, row_weights, col_weights):
     if len(row_weights) != grid_size or len(col_weights) != grid_size:
