@@ -19,7 +19,7 @@ def calculate_cross_sums(row_targets, col_targets, row_weights, col_weights):
         return [[int(variables[i][j].value()) for j in range(grid_size)]    for i in range(grid_size)]
     else:
         print("No solution found.")
-        raise Exception("Solution not found")
+        raise ValueError("Solution not found")
 
 
 if __name__ == "__main__":
